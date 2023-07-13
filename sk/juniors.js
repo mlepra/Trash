@@ -60,7 +60,7 @@ for (let t = 0; t < tables.length; t++) {
           if (count > 5) {
               let dataFixed = regression.linear(data);
               talent = Math.round((10 / (dataFixed.equation[0] * 10)) * 100) / 100;
-              spected = dataFixed.predict(count + weeks)[1]
+              spected = dataFixed.predict(weeksTotal)[1]
           } else {
               talent = '--';
               spected = '--';
