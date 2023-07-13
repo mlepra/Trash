@@ -37,6 +37,7 @@ for (let t = 0; t < tables.length; t++) {
           //console.log(juniorName+' DATA:'+JSON.stringify(data));
           let talent;
           let spected;
+          let weeksTotal;
 
           let elemStyle = "float: left;";
 
@@ -45,15 +46,16 @@ for (let t = 0; t < tables.length; t++) {
           if (row.cells.length == 6) {
               elemDst = row.cells[5].children[0];
               weeks = parseInt(row.cells[4].innerText, 10);
+              weeksTotal = weeks + count;
           } else
           if (row.cells.length == 5) {
               elemDst = row.cells[4].children[0];
               weeks = count;
+              weeksTotal = weeks;
               elemStyle += "margin-left: 24%;"
           } else {
               return;
           }
-          let weeksTotal = weeks + count;
 
           if (count > 5) {
               let dataFixed = regression.linear(data);
