@@ -1,6 +1,7 @@
 // ==UserScript==
+// @author tenuco
 // @name Sokker Players Improve
-// @description
+// @description Sokker Players Improve Info
 // @namespace sokker.org
 // @match https://sokker.org/es/app/squad/*
 // @version 1.1.2
