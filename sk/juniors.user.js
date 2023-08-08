@@ -1,9 +1,10 @@
 // ==UserScript==
+// @author tenuco
 // @name Sokker Juniors Talent Calc
-// @description
+// @description Sokker Juniors Talent Calc Info
 // @namespace sokker.org
 // @match https://sokker.org/juniors/*
-// @version 1.1
+// @version 1.1.2
 // @grant none
 // @require https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js
 // ==/UserScript==
