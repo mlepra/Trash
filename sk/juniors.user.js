@@ -2,9 +2,7 @@
 // @name Sokker Juniors Talent Calc
 // @description
 // @namespace sokker.org
-// @match https://sokker.org/juniors/teamID/*
-// @match https://sokker.org/juniors/action/Promote/juniorID/*
-// @match https://sokker.org/juniors/action/SendOff/juniorID/*
+// @match https://sokker.org/juniors/*
 // @version 1.1
 // @grant none
 // @require https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js
