@@ -4,7 +4,7 @@
 // @description Sokker Players Improve Info
 // @namespace sokker.org
 // @match https://sokker.org/es/app/squad/*
-// @version 1.1.3
+// @version 1.1.4
 // @grant none
 // ==/UserScript==
 let logPrefix = "Fix Squad -";
