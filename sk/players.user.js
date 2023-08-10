@@ -160,8 +160,8 @@ fetch(teamURL)
                   let elAgeAvr = document.createElement('div');
                   elAgeAvr.classList.add('view-squad-header__plus');
                   elAgeAvr.innerHTML = '<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+frmVal(playersValSum/playersCount)+' <small>'+resData2.info.wage.currency+' Val Av</small></span>'+
-                      '&nbsp;&nbsp;&nbsp;'&nbsp;&nbsp;&nbsp;<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+frmVal(playersSalSum/playersCount)+' <small>'+resData2.info.wage.currency+' Sal Av</small></span>'+
-                      '&nbsp;&nbsp;&nbsp;'&nbsp;&nbsp;&nbsp;<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+(playersAgeSum/playersCount).toFixed(2)+' <small>Age Av</small></span>';
+                      '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+frmVal(playersSalSum/playersCount)+' <small>'+resData2.info.wage.currency+' Sal Av</small></span>'+
+                      '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+(playersAgeSum/playersCount).toFixed(2)+' <small>Age Av</small></span>';
                   console.log("playersCount:"+playersCount+" playersValSum:"+playersValSum+" elAgeAvr.innerHTML:"+ elAgeAvr.innerHTML);
                   squadTitle[0].querySelector(".view-squad-header__main").after(elAgeAvr);
               }
