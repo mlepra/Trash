@@ -4,7 +4,7 @@
 // @description Sokker Players Improve Info
 // @namespace sokker.org
 // @match https://sokker.org/es/app/squad/*
-// @version 1.1.2
+// @version 1.1.3
 // @grant none
 // ==/UserScript==
 let logPrefix = "Fix Squad -";
@@ -159,9 +159,9 @@ fetch(teamURL)
                   let squadTitle = document.querySelectorAll(".view-squad-header");
                   let elAgeAvr = document.createElement('div');
                   elAgeAvr.classList.add('view-squad-header__plus');
-                  elAgeAvr.innerHTML = '<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+frmVal(playersValSum/playersCount)+' <small>'+resData2.info.wage.currency+' Val Avr</small></span>'+
-                      '&nbsp;&nbsp;&nbsp;<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+frmVal(playersSalSum/playersCount)+' <small>'+resData2.info.wage.currency+' Sal Avr</small></span>'+
-                      '&nbsp;&nbsp;&nbsp;<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+(playersAgeSum/playersCount).toFixed(2)+' <small>Age Avr</small></span>';
+                  elAgeAvr.innerHTML = '<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+frmVal(playersValSum/playersCount)+' <small>'+resData2.info.wage.currency+' Val Av</small></span>'+
+                      '&nbsp;&nbsp;&nbsp;'&nbsp;&nbsp;&nbsp;<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+frmVal(playersSalSum/playersCount)+' <small>'+resData2.info.wage.currency+' Sal Av</small></span>'+
+                      '&nbsp;&nbsp;&nbsp;'&nbsp;&nbsp;&nbsp;<span class="headline c-text-light fs-16 fs-18@>mobile fw-700">'+(playersAgeSum/playersCount).toFixed(2)+' <small>Age Av</small></span>';
                   console.log("playersCount:"+playersCount+" playersValSum:"+playersValSum+" elAgeAvr.innerHTML:"+ elAgeAvr.innerHTML);
                   squadTitle[0].querySelector(".view-squad-header__main").after(elAgeAvr);
               }
