@@ -4,7 +4,7 @@
 // @author tenuco
 // @namespace sokker.org
 // @match https://sokker.org/es/app/training/player-info/*/
-// @version 0.9
+// @version 0.9.1
 // @grant none
 // ==/UserScript==
 //https://sokker.org/es/app/training/player-info/38195894/
@@ -45,6 +45,11 @@ fetch(teamURL)
     let season = resData1.today.season;
     let week = resData1.today.week;
     let seasonWeek = resData1.today.seasonWeek;
+    if (resData1.today.day < 5) {
+      //Si es antes de la actualizacion, a efectos de esto aun estamos en la semana anterior....
+      seasonWeek--;
+      week--;
+    }
     let counter1 = 0;
     let intv1 = setInterval(async function() {
       counter1++;
