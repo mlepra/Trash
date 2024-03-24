@@ -1,10 +1,10 @@
 // ==UserScript==
-// @author tenuco
 // @name Sokker Players Improve
 // @description Sokker Players Improve Info
+// @author tenuco
 // @namespace sokker.org
 // @match https://sokker.org/es/app/squad/*
-// @version 1.1.4
+// @version 1.1.5
 // @grant none
 // ==/UserScript==
 let logPrefix = "Fix Squad -";
@@ -148,12 +148,12 @@ fetch(teamURL)
                   let frmVal = function(val) {
                       let strVal = ""+parseInt(val);
                       let retVal = "";
-                      let total = 0;
-                      while (strVal.length > (total + 3)) {
-                          total += 3;
-                          retVal = "&nbsp;"+strVal.substr(total * -1) + retVal;
+                      let grpSize = 3;
+                      while (strVal.length > grpSize) {
+                          retVal = "&nbsp;"+strVal.substr(grpSize * -1) + retVal;
+                          strVal = strVal.substr(0, strVal.length - grpSize)
                       }
-                      retVal = strVal.substr(0, strVal.length - total) + retVal;
+                      retVal = strVal + retVal;
                       return retVal;
                   }
                   let squadTitle = document.querySelectorAll(".view-squad-header");
