@@ -4,7 +4,7 @@
 // @author tenuco
 // @namespace sokker.org
 // @match https://sokker.org/es/app/training/player-info/*/
-// @version 0.9.1
+// @version 0.9.2
 // @grant none
 // ==/UserScript==
 //https://sokker.org/es/app/training/player-info/38195894/
@@ -45,11 +45,18 @@ fetch(teamURL)
     let season = resData1.today.season;
     let week = resData1.today.week;
     let seasonWeek = resData1.today.seasonWeek;
+    let refWeek = seasonWeek;
+    let yR = 0;
     if (resData1.today.day < 5) {
       //Si es antes de la actualizacion, a efectos de esto aun estamos en la semana anterior....
-      seasonWeek--;
+      refWeek--;
       week--;
     }
+    if (refWeek == 0) {
+        refWeek = 13;
+        yR++;
+    }
+
     let counter1 = 0;
     let intv1 = setInterval(async function() {
       counter1++;
@@ -88,8 +95,7 @@ fetch(teamURL)
           .then(resData2 => {
 
             let lineCount = -1;
-            let yR = 0;
-            let refWeek = seasonWeek;
+
             trnLineElems.forEach(async trnLineElem => {
                 lineCount++;
                 refWeek--;
@@ -98,18 +104,26 @@ fetch(teamURL)
                     yR++;
                 }
 
-                console.log("line:"+lineCount+" week:"+refWeek+" yR:"+yR+" pY:"+(resData2.info.characteristics.age - yR));
+                let totalSkills = 0;
+                totalSkills += Number(trnLineElem.children[3].textContent);
+                totalSkills += Number(trnLineElem.children[4].textContent);
+                totalSkills += Number(trnLineElem.children[5].textContent);
+                totalSkills += Number(trnLineElem.children[7].textContent);
+                totalSkills += Number(trnLineElem.children[8].textContent);
+                totalSkills += Number(trnLineElem.children[9].textContent);
+
+                if (incStamina) totalSkills += Number(trnLineElem.children[2].textContent);
+                if (incForm) totalSkills += Number(trnLineElem.children[10].textContent);
+                if (Number(trnLineElem.children[6].textContent) > incKeeperMinVal) totalSkills += Number(trnLineElem.children[6].textContent);
+
+                console.log("line:"+lineCount+" week:"+refWeek+" yR:"+yR+" pY:"+(resData2.info.characteristics.age - yR)+" skls:"+totalSkills);
 
                 let elVis = document.createElement('span');
                 elVis.classList.add('headline');
                 elVis.classList.add('c-text-normal');
                 elVis.classList.add('fs-15');
-                elVis.innerHTML += '<br>Age:'+(resData2.info.characteristics.age - yR)+' Week:'+refWeek;
+                elVis.innerHTML += '<br><small>Sk:'+totalSkills+' Age:'+(resData2.info.characteristics.age - yR)+' W:'+refWeek+'</small>';
                 trnLineElem.querySelector(".table__cell--date .headline").after(elVis);
-
-
-
-
 
           /*
 
