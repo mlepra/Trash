@@ -122,7 +122,7 @@ fetch(teamURL)
                 elVis.classList.add('headline');
                 elVis.classList.add('c-text-normal');
                 elVis.classList.add('fs-15');
-                elVis.innerHTML += '<br><small>Sk:'+totalSkills+' Age:'+(resData2.info.characteristics.age - yR)+' W:'+refWeek+'</small>';
+                elVis.innerHTML += '<br><span style="font-size:85%">Sk:'+totalSkills+' Age:'+(resData2.info.characteristics.age - yR)+' W:'+refWeek+'</span>';
                 trnLineElem.querySelector(".table__cell--date .headline").after(elVis);
 
           /*
