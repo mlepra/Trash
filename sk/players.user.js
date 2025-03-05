@@ -4,7 +4,7 @@
 // @author tenuco
 // @namespace sokker.org
 // @match https://sokker.org/es/app/squad/*
-// @version 1.1.5
+// @version 1.1.6
 // @grant none
 // ==/UserScript==
 let logPrefix = "Fix Squad -";
@@ -15,7 +15,7 @@ let playerURL = "https://sokker.org/api/player/";//playerId
 let squadURL = "https://sokker.org/api/player?filter[limit]=200&filter[offset]=0&filter[team]=";//teamId
 let trainingURL = "https://sokker.org/api/training/players";
 let playerTrainingInfoURL = "https://sokker.org/es/app/training/player-info/";//playerId
-let teamIdXPath = "//span[text()='Team ID: ']"; //"//a[contains(text(),'Searching')]";
+let teamIdXPath = "//span[text()='Team id: ']"; //"//a[contains(text(),'Searching')]";
 
 let limit = 50;
 let waith = 500;
