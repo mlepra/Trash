@@ -5,10 +5,10 @@
 // @namespace    sokker.org
 // @match        https://sokker.org/juniors/*
 // @match        https://sokker.org/juniors
-// @match        https://app.sokker.org/juniors*
+// @match        https://app.sokker.org/*
 // @updateURL    https://github.com/mlepra/Trash/raw/refs/heads/main/sk/juniors.user.js
 // @downloadURL  https://github.com/mlepra/Trash/raw/refs/heads/main/sk/juniors.user.js
-// @version      3.0.0
+// @version      3.0.1
 // @grant        GM_xmlhttpRequest
 // @connect      sokker.org
 // @require      https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js
